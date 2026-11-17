@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" modified="2026-11-17T21:00:00.000Z" agent="Antigravity" version="24.0.0" type="device">
+  <diagram id="lr6-var8" name="Завдання 5 (Варіант 8)">
+    <mxGraphModel dx="900" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="start" value="Початок" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="30" width="160" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="input" value="Введення N" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="310" y="105" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="chk_lt10" value="N &lt; 10 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="320" y="185" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_single" value="Виведення N" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="195" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="init" value="last = N % 10&#xa;temp = N&#xa;power = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="305" y="285" width="190" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="loop_cond" value="temp &gt;= 10 ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="315" y="380" width="170" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="loop_body" value="temp = temp / 10&#xa;power = power * 10" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="305" y="485" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="calc" value="first = temp&#xa;middle = (N % power) / 10&#xa;result = last * power + middle * 10 + first" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="260" y="585" width="280" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="output" value="Виведення result" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="305" y="685" width="190" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="end" value="Кінець" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="770" width="160" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="start" target="input"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="input" target="chk_lt10"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Так" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="chk_lt10" target="out_single"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Ні" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="chk_lt10" target="init"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="init" target="loop_cond"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Так" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="loop_cond" target="loop_body"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="loop_body" target="loop_cond">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="260" y="512"/><mxPoint x="260" y="417"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="Ні" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="loop_cond" target="calc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="417"/><mxPoint x="570" y="620"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="calc" target="output"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="output" target="end"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="out_single" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="640" y="792"/></Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
